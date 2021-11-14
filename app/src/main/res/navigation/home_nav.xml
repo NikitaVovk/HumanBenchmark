@@ -238,4 +238,37 @@
             android:name="lives"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/registrationForm"
+        android:name="com.example.humanbenchmark.RegistrationForm"
+        android:label="fragment_registration_form"
+        tools:layout="@layout/fragment_registration_form" >
+        <action
+            android:id="@+id/action_registrationForm_to_loginForm"
+            app:destination="@id/loginForm" />
+        <action
+            android:id="@+id/action_registrationForm_to_mainProfilePage"
+            app:destination="@id/mainProfilePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginForm"
+        android:name="com.example.humanbenchmark.LoginForm"
+        android:label="fragment_login_form"
+        tools:layout="@layout/fragment_login_form" >
+        <action
+            android:id="@+id/action_loginForm_to_registrationForm"
+            app:destination="@id/registrationForm" />
+        <action
+            android:id="@+id/action_loginForm_to_mainProfilePage"
+            app:destination="@id/mainProfilePage" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainProfilePage"
+        android:name="com.example.humanbenchmark.MainProfilePage"
+        android:label="fragment_main_profile_page"
+        tools:layout="@layout/fragment_main_profile_page" >
+        <action
+            android:id="@+id/action_mainProfilePage_to_loginForm"
+            app:destination="@id/loginForm" />
+    </fragment>
 </navigation>

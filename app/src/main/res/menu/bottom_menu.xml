@@ -9,6 +9,6 @@
     <item
         android:title="Account"
         android:icon="@drawable/ic_percon"
-        android:id="@+id/profile2"
+        android:id="@+id/registrationForm"
         />
 </menu>
