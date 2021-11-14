@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ocean"
+    tools:context=".VisualMemoryTest5x5">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/visualButton_5x5_21"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:shadowColor="#FFFFFF"
+            android:textIsSelectable="false"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintEnd_toStartOf="@+id/visualButton_5x5_22"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_16"
+            app:strokeColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_23"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="15dp"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_18" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_24"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintStart_toEndOf="@+id/visualButton_5x5_23"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_19" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_25"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintStart_toEndOf="@+id/visualButton_5x5_24"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_20" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_22"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:shadowColor="#FFFFFF"
+            android:textIsSelectable="false"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintEnd_toStartOf="@+id/visualButton_5x5_23"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_17"
+            app:strokeColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_16"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:shadowColor="#FFFFFF"
+            android:textIsSelectable="false"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintEnd_toStartOf="@+id/visualButton_5x5_17"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_11"
+            app:strokeColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_18"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="15dp"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_15" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_19"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintStart_toEndOf="@+id/visualButton_5x5_18"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_14" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_20"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintStart_toEndOf="@+id/visualButton_5x5_19"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_12" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_17"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:shadowColor="#FFFFFF"
+            android:textIsSelectable="false"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintEnd_toStartOf="@+id/visualButton_5x5_18"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_13"
+            app:strokeColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_11"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:shadowColor="#FFFFFF"
+            android:textIsSelectable="false"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintEnd_toStartOf="@+id/visualButton_5x5_13"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_6"
+            app:strokeColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_13"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:shadowColor="#FFFFFF"
+            android:textIsSelectable="false"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintEnd_toStartOf="@+id/visualButton_5x5_15"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_8"
+            app:strokeColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_14"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintStart_toEndOf="@+id/visualButton_5x5_15"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_9" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_15"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="15dp"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_7" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_12"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintStart_toEndOf="@+id/visualButton_5x5_14"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_10" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_6"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:shadowColor="#FFFFFF"
+            android:textIsSelectable="false"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintEnd_toStartOf="@+id/visualButton_5x5_8"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_1"
+            app:strokeColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_10"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintStart_toEndOf="@+id/visualButton_5x5_9"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_5" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_8"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:shadowColor="#FFFFFF"
+            android:textIsSelectable="false"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintEnd_toStartOf="@+id/visualButton_5x5_7"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_2"
+            app:strokeColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_9"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintStart_toEndOf="@+id/visualButton_5x5_7"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_4" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_7"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="15dp"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/visualButton_5x5_3" />
+
+        <TextView
+            android:id="@+id/textVisualViewLevel_5x5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginRight="80dp"
+            android:text="Level: 1"
+            android:textColor="@color/see_breath"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/heart_5x5_1"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="35dp"
+            android:src="@drawable/heart"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/textVisualViewLevel_5x5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/heart_5x5_2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="35dp"
+            android:src="@drawable/heart"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/heart_5x5_1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/heart_5x5_3"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="35dp"
+            android:src="@drawable/heart"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/heart_5x5_2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_5"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="50dp"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintStart_toEndOf="@+id/visualButton_5x5_4"
+            app:layout_constraintTop_toBottomOf="@+id/textVisualViewLevel_5x5" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_1"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:shadowColor="#FFFFFF"
+            android:textIsSelectable="false"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintEnd_toStartOf="@+id/visualButton_5x5_2"
+            app:layout_constraintTop_toBottomOf="@+id/textVisualViewLevel_5x5"
+            app:strokeColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_3"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="50dp"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textVisualViewLevel_5x5" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_2"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:shadowColor="#FFFFFF"
+            android:textIsSelectable="false"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintEnd_toStartOf="@+id/visualButton_5x5_3"
+            app:layout_constraintTop_toBottomOf="@+id/textVisualViewLevel_5x5"
+            app:strokeColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/visualButton_5x5_4"
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="50dp"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintStart_toEndOf="@+id/visualButton_5x5_3"
+            app:layout_constraintTop_toBottomOf="@+id/textVisualViewLevel_5x5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

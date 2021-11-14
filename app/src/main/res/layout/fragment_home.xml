@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button_reaction_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reaction Time Test" />
+
+        <Button
+            android:id="@+id/buttonAimTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aim Trainer Test" />
+
+        <Button
+            android:id="@+id/buttonSequence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sequence Memory Test" />
+
+        <Button
+            android:id="@+id/buttonNumberMemory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number Memory Test" />
+
+        <Button
+            android:id="@+id/buttonChimpTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chimp Test" />
+
+        <Button
+            android:id="@+id/buttonVisualMemory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Visual Memory Test" />
+    </LinearLayout>
+
+</FrameLayout>

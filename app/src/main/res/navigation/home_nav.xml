@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav"
+    app:startDestination="@id/home">
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.humanbenchmark.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_reactionTime"
+            app:destination="@id/reactionTime" />
+        <action
+            android:id="@+id/action_home_to_aimTrainer"
+            app:destination="@id/aimTrainer" />
+        <action
+            android:id="@+id/action_home_to_sequenceMemoryStart"
+            app:destination="@id/sequenceMemoryStart" />
+        <action
+            android:id="@+id/action_home_to_numberMemoryStart"
+            app:destination="@id/numberMemoryStart" />
+        <action
+            android:id="@+id/action_home_to_chimpTestStart"
+            app:destination="@id/chimpTestStart" />
+        <action
+            android:id="@+id/action_home_to_visualMemoryStart"
+            app:destination="@id/visualMemoryStart" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile2"
+        android:name="com.example.humanbenchmark.Profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/reactionTime"
+        android:name="com.example.humanbenchmark.ReactionTime"
+        android:label="fragment_reaction_time"
+        tools:layout="@layout/fragment_reaction_time" />
+    <fragment
+        android:id="@+id/aimTrainer"
+        android:name="com.example.humanbenchmark.AimTrainer"
+        android:label="fragment_aim_trainer"
+        tools:layout="@layout/fragment_aim_trainer" />
+    <fragment
+        android:id="@+id/sequenceMemory"
+        android:name="com.example.humanbenchmark.SequenceMemory"
+        android:label="fragment_sequence_memory"
+        tools:layout="@layout/fragment_sequence_memory" >
+        <action
+            android:id="@+id/action_sequenceMemory_to_sequenceMemoryStart"
+            app:destination="@id/sequenceMemoryStart" />
+    </fragment>
+    <fragment
+        android:id="@+id/sequenceMemoryStart"
+        android:name="com.example.humanbenchmark.SequenceMemoryStart"
+        android:label="fragment_sequence_memory_start"
+        tools:layout="@layout/fragment_sequence_memory_start" >
+        <action
+            android:id="@+id/action_sequenceMemoryStart_to_sequenceMemory"
+            app:destination="@id/sequenceMemory" />
+        <argument
+            android:name="reachedLvl"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+    <fragment
+        android:id="@+id/numberMemoryStart"
+        android:name="com.example.humanbenchmark.NumberMemoryStart"
+        android:label="fragment_number_memory_start"
+        tools:layout="@layout/fragment_number_memory_start" >
+        <action
+            android:id="@+id/action_numberMemoryStart_to_numberMemoryTest"
+            app:destination="@id/numberMemoryTest" />
+    </fragment>
+    <fragment
+        android:id="@+id/numberMemoryTest"
+        android:name="com.example.humanbenchmark.NumberMemoryTest"
+        android:label="fragment_number_memory_test"
+        tools:layout="@layout/fragment_number_memory_test" >
+        <action
+            android:id="@+id/action_numberMemoryTest_to_numberMemoryResultFragment"
+            app:destination="@id/numberMemoryResultFragment" />
+        <argument
+            android:name="lvl"
+            app:argType="integer"
+            android:defaultValue="1" />
+    </fragment>
+    <fragment
+        android:id="@+id/numberMemoryResultFragment"
+        android:name="com.example.humanbenchmark.NumberMemoryResultFragment"
+        android:label="fragment_number_memory_result"
+        tools:layout="@layout/fragment_number_memory_result" >
+        <argument
+            android:name="level"
+            app:argType="integer" />
+        <argument
+            android:name="correctNumber"
+            app:argType="string" />
+        <argument
+            android:name="answerNumber"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_numberMemoryResultFragment_to_numberMemoryStart"
+            app:destination="@id/numberMemoryStart" />
+        <action
+            android:id="@+id/action_numberMemoryResultFragment_to_numberMemoryTest2"
+            app:destination="@id/numberMemoryTest" />
+    </fragment>
+    <fragment
+        android:id="@+id/chimpTestStart"
+        android:name="com.example.humanbenchmark.ChimpTestStart"
+        android:label="fragment_chimp_test_start"
+        tools:layout="@layout/fragment_chimp_test_start" >
+        <action
+            android:id="@+id/action_chimpTestStart_to_chimpTest"
+            app:destination="@id/chimpTest" />
+    </fragment>
+    <fragment
+        android:id="@+id/chimpTestScore"
+        android:name="com.example.humanbenchmark.ChimpTestScore"
+        android:label="fragment_chimp_test_score"
+        tools:layout="@layout/fragment_chimp_test_score" >
+        <action
+            android:id="@+id/action_chimpTestScore_to_chimpTest"
+            app:destination="@id/chimpTest" />
+        <action
+            android:id="@+id/action_chimpTestScore_to_chimpTestStart"
+            app:destination="@id/chimpTestStart" />
+        <argument
+            android:name="numbers"
+            app:argType="integer" />
+        <argument
+            android:name="strikes"
+            app:argType="integer" />
+        <argument
+            android:name="repeat"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/chimpTest"
+        android:name="com.example.humanbenchmark.ChimpTest"
+        android:label="fragment_chimp_test"
+        tools:layout="@layout/fragment_chimp_test" >
+        <action
+            android:id="@+id/action_chimpTest_to_chimpTestScore"
+            app:destination="@id/chimpTestScore" />
+        <argument
+            android:name="numbers"
+            app:argType="integer"
+            android:defaultValue="4" />
+        <argument
+            android:name="strikes"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/visualMemoryStart"
+        android:name="com.example.humanbenchmark.VisualMemoryStart"
+        android:label="fragment_visual_memory_start"
+        tools:layout="@layout/fragment_visual_memory_start" >
+        <action
+            android:id="@+id/action_visualMemoryStart_to_visualMemoryTest3x3"
+            app:destination="@id/visualMemoryTest3x3" />
+    </fragment>
+    <fragment
+        android:id="@+id/visualMemoryTest3x3"
+        android:name="com.example.humanbenchmark.VisualMemoryTest3x3"
+        android:label="fragment_visual_memory_test3x3"
+        tools:layout="@layout/fragment_visual_memory_test3x3" >
+        <action
+            android:id="@+id/action_visualMemoryTest3x3_to_visualMemoryResult"
+            app:destination="@id/visualMemoryResult" />
+        <action
+            android:id="@+id/action_visualMemoryTest3x3_self"
+            app:destination="@id/visualMemoryTest3x3" />
+        <argument
+            android:name="level"
+            app:argType="integer"
+            android:defaultValue="1" />
+        <argument
+            android:name="lives"
+            app:argType="integer"
+            android:defaultValue="3" />
+        <action
+            android:id="@+id/action_visualMemoryTest3x3_to_visualMemoryTest4x4"
+            app:destination="@id/visualMemoryTest4x4" />
+    </fragment>
+    <fragment
+        android:id="@+id/visualMemoryTest4x4"
+        android:name="com.example.humanbenchmark.visualMemoryTest4x4"
+        android:label="fragment_visual_memory_test4x4"
+        tools:layout="@layout/fragment_visual_memory_test4x4" >
+        <action
+            android:id="@+id/action_visualMemoryTest4x4_to_visualMemoryResult"
+            app:destination="@id/visualMemoryResult" />
+        <action
+            android:id="@+id/action_visualMemoryTest4x4_self"
+            app:destination="@id/visualMemoryTest4x4" />
+        <argument
+            android:name="level"
+            app:argType="integer" />
+        <argument android:name="lives"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_visualMemoryTest4x4_to_visualMemoryTest5x5"
+            app:destination="@id/visualMemoryTest5x5" />
+    </fragment>
+    <fragment
+        android:id="@+id/visualMemoryResult"
+        android:name="com.example.humanbenchmark.visualMemoryResult"
+        android:label="fragment_visual_memory_result"
+        tools:layout="@layout/fragment_visual_memory_result" >
+        <action
+            android:id="@+id/action_visualMemoryResult_to_visualMemoryStart"
+            app:destination="@id/visualMemoryStart" />
+        <argument
+            android:name="level"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/visualMemoryTest5x5"
+        android:name="com.example.humanbenchmark.VisualMemoryTest5x5"
+        android:label="fragment_visual_memory_test5x5"
+        tools:layout="@layout/fragment_visual_memory_test5x5" >
+        <action
+            android:id="@+id/action_visualMemoryTest5x5_self"
+            app:destination="@id/visualMemoryTest5x5" />
+        <action
+            android:id="@+id/action_visualMemoryTest5x5_to_visualMemoryResult"
+            app:destination="@id/visualMemoryResult" />
+        <argument
+            android:name="level"
+            app:argType="integer" />
+        <argument
+            android:name="lives"
+            app:argType="integer" />
+    </fragment>
+</navigation>
