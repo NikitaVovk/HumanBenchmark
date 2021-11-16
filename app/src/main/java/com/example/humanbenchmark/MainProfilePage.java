@@ -256,14 +256,14 @@ public class MainProfilePage extends Fragment {
 //
 //
 //
-//        view.findViewById(R.id.buttonLogOut).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                FirebaseAuth.getInstance().signOut();
-//                NavHostFragment.findNavController(MainProfilePage.this)
-//                        .navigate(R.id.action_mainProfilePage_to_loginForm);
-//            }
-//        });
+        view.findViewById(R.id.logOut).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                NavHostFragment.findNavController(MainProfilePage.this)
+                        .navigate(R.id.action_mainProfilePage_to_loginForm);
+            }
+        });
 
     }
 }
