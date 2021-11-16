@@ -4,11 +4,13 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -63,8 +65,26 @@ public class ChimpTestStart extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_chimp_test_start, container, false);
     }
+
+    public ImageView infoView;
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        infoView =  view.findViewById(R.id.infoChimp);
+        infoView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                NavDirections action =  ChimpTestStartDirections.
+                        actionChimpTestStartToInfoPage(false,"chimpTest_results");
+
+                NavHostFragment.findNavController(ChimpTestStart.this)
+                        .navigate(action);
+
+
+            }
+        });
+
         view.findViewById(R.id.startChimp).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

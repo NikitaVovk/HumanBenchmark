@@ -13,6 +13,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,7 +31,7 @@ import android.widget.TextView;
  */
 public class NumberMemoryResultFragment extends Fragment {
     TextView correctNum, answerNum, level;
-    Button nextBut, tryAgainBut;
+    Button nextBut, tryAgainBut, saveResult;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -70,10 +80,13 @@ public class NumberMemoryResultFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_number_memory_result, container, false);
     }
     int reachedLvl;
+    FirebaseAuth firebaseAuth;
+    FirebaseFirestore fStore;
     String numC , numA;
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         tryAgainBut = view.findViewById(R.id.chimpTryAgain);
+        saveResult = view.findViewById(R.id.saveNumberMemResult);
         nextBut = view.findViewById(R.id.chimpNext);
         correctNum = view.findViewById(R.id.iloscNum);
         answerNum = view.findViewById(R.id.strikes);
@@ -91,11 +104,39 @@ public class NumberMemoryResultFragment extends Fragment {
          }
          else {
              tryAgainBut.setVisibility(View.VISIBLE);
+             saveResult.setVisibility(View.VISIBLE);
              answerNum.setTextColor(Color.RED);
          }
         addListeners();
     }
     public void addListeners(){
+        saveResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseAuth = FirebaseAuth.getInstance();
+                fStore = FirebaseFirestore.getInstance();
+                if (firebaseAuth.getCurrentUser() == null) {
+
+                    Toast.makeText(getActivity(), "You have to login to save your result !!!", Toast.LENGTH_SHORT).show();
+                } else {
+                    for (int i = 0; i < 3; i++) {
+                        String uniqueID = UUID.randomUUID().toString();
+                        DocumentReference documentReference = fStore.collection("numberMemory_results").document(uniqueID);
+                        Map<String, Object> user = new HashMap<>();
+                        user.put("result", reachedLvl);
+                        user.put("userID", firebaseAuth.getCurrentUser().getUid());
+                        documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(getActivity(), "Saved", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                    saveResult.setVisibility(View.INVISIBLE);
+
+                }
+            }
+        });
         nextBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

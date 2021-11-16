@@ -88,7 +88,7 @@
             android:id="@+id/chimpNext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="32dp"
             android:text="NEXT"
             android:textSize="18sp"
             android:visibility="invisible"
@@ -100,11 +100,22 @@
             android:id="@+id/chimpTryAgain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="50dp"
             android:text="TRY AGAIN"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/resultLvlTxt" />
+
+        <Button
+            android:id="@+id/saveNumberMemResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Save Result"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chimpTryAgain" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

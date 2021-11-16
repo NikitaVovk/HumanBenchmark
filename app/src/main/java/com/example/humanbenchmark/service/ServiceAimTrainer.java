@@ -11,7 +11,8 @@ public class ServiceAimTrainer  extends Thread {
     public int state = -1;
     ArrayList<Long> arrayListOfTimes;
     AimTrainer handler;
-    long allTime;
+   public long allTime;
+
    public boolean isServed;
 
     public ServiceAimTrainer(   AimTrainer handler) {
@@ -33,6 +34,7 @@ public class ServiceAimTrainer  extends Thread {
 
     @Override
     public void run(){
+       // ArrayList <Long> lista = new ArrayList<>();
         int licznik =0;
         while(state<29) {
             licznik++;
@@ -53,8 +55,9 @@ public class ServiceAimTrainer  extends Thread {
 
             testResult = System.currentTimeMillis() - testResult;
             allTime+=testResult;
+            //lista.add(testResult);
         }
-        System.out.println("KONIEEEC+ "+(allTime/30));
+       // System.out.println("KONIEEEC+ "+lista+"\n"+lista.size());
         isServed= true;
         String wynik = "Avarage time per target: "+ (allTime/30)+"ms";
         handler.textViewRemaining.setText(wynik);

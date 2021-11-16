@@ -12,6 +12,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -68,17 +78,54 @@ public class visualMemoryResult extends Fragment {
     }
 
     TextView level;
-    Button  tryAgain;
+    Button  tryAgain, saveResult;
     // ServiceChimpTest serviceChimpTest;
+    FirebaseAuth firebaseAuth;
+    FirebaseFirestore fStore;
+
     int levelReached, numOfStrikes;
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         level = view.findViewById(R.id.vm_textView_result_level);
         tryAgain = view.findViewById(R.id.vm_tryAgain);
+        saveResult =  view.findViewById(R.id.saveVisualMemResult);
 
         levelReached = visualMemoryResultArgs.fromBundle(getArguments()).getLevel();
 
         level.setText(new String("Level: "+levelReached));
+
+
+        saveResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                System.out.println("INSIDE SAVING");
+                firebaseAuth = FirebaseAuth.getInstance();
+                fStore = FirebaseFirestore.getInstance();
+                if (firebaseAuth.getCurrentUser() == null) {
+
+                    Toast.makeText(getActivity(), "You have to login to save your result !!!", Toast.LENGTH_SHORT).show();
+                } else {
+                   //for (int i = 0; i < 25; i++) {
+                       // System.out.println(i);
+                        String uniqueID = UUID.randomUUID().toString();
+                        DocumentReference documentReference = fStore.collection("visualMemory_results").document(uniqueID);
+                        Map<String, Object> user = new HashMap<>();
+                        user.put("result", levelReached);
+                        user.put("userID", firebaseAuth.getCurrentUser().getUid());
+                        documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(getActivity(), "Saved", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                  //  }
+                    saveResult.setVisibility(View.INVISIBLE);
+
+                }
+            }
+        });
+
         tryAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

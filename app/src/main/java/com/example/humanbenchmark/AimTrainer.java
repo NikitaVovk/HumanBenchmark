@@ -9,20 +9,31 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.humanbenchmark.service.ServiceAimTrainer;
 import com.example.humanbenchmark.service.ServiceReactionTimeTest;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
+import java.util.UUID;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,6 +49,7 @@ public class AimTrainer extends Fragment {
     int widthLayout, heightLayout;
     ServiceAimTrainer serviceAimTrainer;
     public ConstraintLayout.LayoutParams params;
+    Button saveResult;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -85,22 +97,76 @@ public class AimTrainer extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_aim_trainer, container, false);
     }
+
+
+    FirebaseAuth firebaseAuth;
+    FirebaseFirestore fStore;
+    public ImageView infoView;
+    long result;
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        infoView = view.findViewById(R.id.infoAim);
+
         targetAim=  view.findViewById(R.id.targetAim);
         textViewInfo= view.findViewById(R.id.textView4);
         textViewRemaining = view.findViewById(R.id.textView3);
         constraintLayout =  view.findViewById(R.id.constraintLayout);
+        saveResult = view.findViewById(R.id.saveAimResult);
         constraintSet = new ConstraintSet();
         heightLayout=  getViewMeasure(view,true);
         widthLayout = getViewMeasure(view,false);
         serviceAimTrainer = new ServiceAimTrainer(this);
         System.out.println("ONheight+++++++++++++++" + getViewMeasure(view,true));
         System.out.println("ONwidth+++++++++++++++" + getViewMeasure(view,false));
+
         //serviceRTT = new ServiceReactionTimeTest(this);
         addListeners();
     }
     public void addListeners(){
+
+        infoView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                NavDirections action =  AimTrainerDirections.
+                        actionAimTrainerToInfoPage(true,"aimTrainer_results");
+
+                NavHostFragment.findNavController(AimTrainer.this)
+                        .navigate(action);
+
+
+            }
+        });
+
+        saveResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseAuth = FirebaseAuth.getInstance();
+                fStore = FirebaseFirestore.getInstance();
+                if (firebaseAuth.getCurrentUser() == null) {
+
+                    Toast.makeText(getActivity(), "You have to login to save your result !!!", Toast.LENGTH_SHORT).show();
+                } else {
+                    for (int i = 0; i < 3; i++) {
+                        String uniqueID = UUID.randomUUID().toString();
+                        DocumentReference documentReference = fStore.collection("aimTrainer_results").document(uniqueID);
+                        Map<String, Object> user = new HashMap<>();
+                        user.put("result", result);
+                        user.put("userID", firebaseAuth.getCurrentUser().getUid());
+                        documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(getActivity(), "Saved", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                    saveResult.setVisibility(View.INVISIBLE);
+
+                }
+            }
+        });
+
 
         targetAim.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,6 +182,8 @@ public class AimTrainer extends Fragment {
                 if (serviceAimTrainer.getStateService()==-1){
 
                 textViewInfo.setVisibility(View.INVISIBLE);
+                saveResult.setVisibility(View.GONE);
+                    infoView.setVisibility(View.GONE);
                  params = (ConstraintLayout.LayoutParams)targetAim.getLayoutParams();
                 // serviceAimTrainer.setState(0);
                  serviceAimTrainer.start();
@@ -127,12 +195,17 @@ public class AimTrainer extends Fragment {
                 }
                 else
                 {
-                    params.setMargins(0, random.nextInt(heightLayout+100-12)+12, random.nextInt(widthLayout-340), 0);
+                    params.setMargins(0, random.nextInt(heightLayout-200-12)+12, random.nextInt(widthLayout-340), 0);
                 }
+            //    params.setMargins(0, 1247, 0, 0);
 
-                if (serviceAimTrainer.state==30){
+
+                if (serviceAimTrainer.state==29){
                     params.setMargins(0, 12, 0, 60);
                     textViewInfo.setVisibility(View.VISIBLE);
+                    infoView.setVisibility(View.VISIBLE);
+                    saveResult.setVisibility(View.VISIBLE);
+                    result = serviceAimTrainer.allTime/30;
                     serviceAimTrainer = new ServiceAimTrainer(AimTrainer.this);
 
                 }

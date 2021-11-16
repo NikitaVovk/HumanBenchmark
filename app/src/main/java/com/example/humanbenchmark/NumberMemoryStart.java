@@ -4,12 +4,14 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -65,9 +67,12 @@ public class NumberMemoryStart extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_number_memory_start, container, false);
     }
+
+    public ImageView infoView;
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //textView = view.findViewById(R.id.textView5);
+        infoView =  view.findViewById(R.id.infoNumber);
         buttonStart =  view.findViewById(R.id.startNumberMemory);
 //        int reachedLvl = SequenceMemoryStartArgs.fromBundle(getArguments()).getReachedLvl();
 //        if (reachedLvl!=-1){
@@ -80,6 +85,19 @@ public class NumberMemoryStart extends Fragment {
         addListeners();
     }
     public void addListeners(){
+        infoView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                NavDirections action =  NumberMemoryStartDirections.
+                        actionNumberMemoryStartToInfoPage(false,"numberMemory_results");
+
+                NavHostFragment.findNavController(NumberMemoryStart.this)
+                        .navigate(action);
+
+
+            }
+        });
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

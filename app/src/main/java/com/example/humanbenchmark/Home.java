@@ -68,7 +68,7 @@ public class Home extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        view.findViewById(R.id.button_reaction_time).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.reactionTimeTestView).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -78,7 +78,7 @@ public class Home extends Fragment {
             }
         });
 
-        view.findViewById(R.id.buttonAimTest).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.aimTrainerTestView).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -87,7 +87,7 @@ public class Home extends Fragment {
                         .navigate(R.id.action_home_to_aimTrainer);
             }
         });
-        view.findViewById(R.id.buttonSequence).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.sequenceMemoryTestView).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -96,7 +96,7 @@ public class Home extends Fragment {
                         .navigate(R.id.action_home_to_sequenceMemoryStart);
             }
         });
-        view.findViewById(R.id.buttonNumberMemory).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.numberMemoryTestView).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -105,7 +105,7 @@ public class Home extends Fragment {
                         .navigate(R.id.action_home_to_numberMemoryStart);
             }
         });
-        view.findViewById(R.id.buttonChimpTest).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.chimpTestView).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -114,7 +114,7 @@ public class Home extends Fragment {
                         .navigate(R.id.action_home_to_chimpTestStart);
             }
         });
-        view.findViewById(R.id.buttonVisualMemory).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.visualMemoryTestView).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

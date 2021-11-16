@@ -12,8 +12,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.humanbenchmark.service.ServiceChimpTest;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -70,17 +79,22 @@ public class ChimpTestScore extends Fragment {
     }
 
 //    NumberMemoryResultFragmentArgs.fromBundle(getArguments()).getLevel();
-TextView nums,strikes;
-    Button next, tryAgain;
+    TextView nums,strikes;
+    Button next, tryAgain,saveResult;
    // ServiceChimpTest serviceChimpTest;
     int numOfNums, numOfStrikes;
     boolean repeat;
+    FirebaseAuth firebaseAuth;
+    FirebaseFirestore fStore;
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
     nums = view.findViewById(R.id.iloscNum);
     strikes = view.findViewById(R.id.strikes);
     next = view.findViewById(R.id.chimpNext);
     tryAgain  = view.findViewById(R.id.chimpTryAgain);
+    saveResult = view.findViewById(R.id.saveChimpResult);
+
 
     numOfNums = ChimpTestScoreArgs.fromBundle(getArguments()).getNumbers();
     numOfStrikes =  ChimpTestScoreArgs.fromBundle(getArguments()).getStrikes();
@@ -89,11 +103,41 @@ TextView nums,strikes;
     strikes.setText(new String(numOfStrikes+" of 3"));
     if (numOfStrikes<3)
         next.setVisibility(View.VISIBLE);
-    else
+    else {
         tryAgain.setVisibility(View.VISIBLE);
+        saveResult.setVisibility(View.VISIBLE);
+    }
         addListeners();
     }
     public void addListeners(){
+
+        saveResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseAuth = FirebaseAuth.getInstance();
+                fStore = FirebaseFirestore.getInstance();
+                if (firebaseAuth.getCurrentUser() == null) {
+
+                    Toast.makeText(getActivity(), "You have to login to save your result !!!", Toast.LENGTH_SHORT).show();
+                } else {
+                    for (int i = 0; i < 3; i++) {
+                        String uniqueID = UUID.randomUUID().toString();
+                        DocumentReference documentReference = fStore.collection("chimpTest_results").document(uniqueID);
+                        Map<String, Object> user = new HashMap<>();
+                        user.put("result", numOfNums);
+                        user.put("userID", firebaseAuth.getCurrentUser().getUid());
+                        documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(getActivity(), "Saved", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                    saveResult.setVisibility(View.INVISIBLE);
+
+                }
+            }
+        });
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

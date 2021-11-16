@@ -1,52 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/button_reaction_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Reaction Time Test" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/buttonAimTest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Aim Trainer Test" />
+            <ImageView
+                android:id="@+id/reactionTimeTestView"
+                android:layout_width="171dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="190dp"
+                android:src="@drawable/reactiontime1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/buttonSequence"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sequence Memory Test" />
+            <ImageView
+                android:id="@+id/aimTrainerTestView"
+                android:layout_width="171dp"
+                android:layout_height="140dp"
+                android:layout_marginStart="190dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/aimtrainer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/buttonNumberMemory"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Number Memory Test" />
+            <ImageView
+                android:id="@+id/numberMemoryTestView"
+                android:layout_width="171dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="190dp"
+                android:src="@drawable/number_memory"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reactionTimeTestView" />
 
-        <Button
-            android:id="@+id/buttonChimpTest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Chimp Test" />
+            <ImageView
+                android:id="@+id/sequenceMemoryTestView"
+                android:layout_width="171dp"
+                android:layout_height="140dp"
+                android:layout_marginStart="190dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/sequence_memory"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/aimTrainerTestView" />
 
-        <Button
-            android:id="@+id/buttonVisualMemory"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Visual Memory Test" />
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/chimpTestView"
+                android:layout_width="171dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="190dp"
+                android:src="@drawable/chimptest"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/numberMemoryTestView" />
 
+            <ImageView
+                android:id="@+id/visualMemoryTestView"
+                android:layout_width="171dp"
+                android:layout_height="140dp"
+                android:layout_marginStart="190dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/visualmemory"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sequenceMemoryTestView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </FrameLayout>

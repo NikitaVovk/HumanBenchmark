@@ -3,6 +3,7 @@ import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.view.View;
 
 import androidx.annotation.RequiresApi;
 
@@ -16,6 +17,7 @@ import java.util.Random;
 public class ServiceReactionTimeTest extends Thread {
     ReactionTime handler;
     String currentState;
+    public long testResult;
 
 
     public String getCurrentState() {
@@ -36,7 +38,8 @@ public class ServiceReactionTimeTest extends Thread {
     public void run(){
         if (currentState.equals("HOME")){
             handler.textView.setBackgroundColor(Color.RED);
-            handler.textView.setText("...");
+            //handler.textView.setText("...");
+            handler.setText("...");
             handler.appendText("Wait for Green");
             handler.textView.setTextColor(Color.WHITE);
 
@@ -49,10 +52,11 @@ public class ServiceReactionTimeTest extends Thread {
                 e.printStackTrace();
             }
             handler.textView.setBackgroundColor(Color.GREEN);
-            handler.textView.setText("...");
+           // handler.textView.setText("...");
+            handler.setText("...");
             handler.appendText("Click!");
             currentState ="GREEN";
-            long testResult = System.currentTimeMillis();
+             testResult = System.currentTimeMillis();
 
             synchronized (this)
             {
@@ -65,10 +69,11 @@ public class ServiceReactionTimeTest extends Thread {
 
             testResult=System.currentTimeMillis()- testResult;
 
-            handler.textView.setBackgroundColor(Color.rgb(102,165,173));
-            handler.textView.setText(testResult+" ms");
+            handler.textView.setBackgroundColor(Color.rgb(7,87,91));
+           // handler.textView.setText(testResult+" ms");
+            handler.setText(testResult+" ms");
             handler.appendText("Click to keep going");
-
+            handler.setVisibleSave();
             currentState ="HOME";
         }
     }
