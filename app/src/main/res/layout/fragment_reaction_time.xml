@@ -26,6 +26,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/ico_thunder"
+            android:layout_width="54dp"
+            android:layout_height="115dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/imgonline_com_ua_resize_nave0covffywvhlk__1_"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Button
             android:id="@+id/saveResult"
             android:layout_width="wrap_content"

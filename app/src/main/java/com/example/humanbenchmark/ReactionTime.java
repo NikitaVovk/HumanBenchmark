@@ -88,11 +88,13 @@ public class ReactionTime extends Fragment {
 
     FirebaseAuth firebaseAuth;
     FirebaseFirestore fStore;
+    ImageView ico;
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         textView=  view.findViewById(R.id.textView);
         saveResult = view.findViewById(R.id.saveResult);
+        ico = view.findViewById(R.id.ico_thunder);
         infoView = view.findViewById(R.id.infoView);
         appendText("\n\nWhen the red box turns green,\nclick as quickly as you can.\nClick anywhere to start");
 
@@ -127,6 +129,7 @@ public class ReactionTime extends Fragment {
                     serviceRTT = new ServiceReactionTimeTest(ReactionTime.this);
                     serviceRTT.start();
                     saveResult.setVisibility(View.INVISIBLE);
+                    ico.setVisibility(View.INVISIBLE);
                     infoView.setVisibility(View.INVISIBLE);
                 }
 
@@ -181,6 +184,7 @@ public class ReactionTime extends Fragment {
             public void run() {
                 saveResult.setVisibility(View.VISIBLE);
                 infoView.setVisibility(View.VISIBLE);
+                ico.setVisibility(View.VISIBLE);
 
             }
         });

@@ -80,15 +80,15 @@ public class ServiceInfoPage extends Thread{
         @Override
     public void run(){
 
-        synchronized (handler){
-            try {
-                handler.wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-            System.out.println("HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-        handler.plot(domains,series);
+//        synchronized (handler){
+//            try {
+//                handler.wait();
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//            System.out.println("HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+//        handler.plot(domains,series);
 
     }
 

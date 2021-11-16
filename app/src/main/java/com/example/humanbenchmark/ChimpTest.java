@@ -76,6 +76,8 @@ public class ChimpTest extends Fragment {
         declareButtonArray(view);
 
         numbers = ChimpTestArgs.fromBundle(getArguments()).getNumbers();
+        if (numbers>=20)
+            numbers=20;
         numOfStrikes = ChimpTestArgs.fromBundle(getArguments()).getStrikes();
 
             serviceChimpTest= new ServiceChimpTest(numbers,numOfStrikes);

@@ -13,6 +13,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.androidplot.xy.CatmullRomInterpolator;
@@ -119,10 +120,12 @@ public class InfoPage extends Fragment {
     XYPlot plot;
     boolean isTime;
     String collectionName;
+    ProgressBar progressBar;
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //TextView textView = view.findViewById(R.id.textView5);
+        TextView about = view.findViewById(R.id.aboutTextView);
+        progressBar =  view.findViewById(R.id.progressBarInfo);
 
         isTime =  InfoPageArgs.fromBundle(getArguments()).getIsTime();
         collectionName = InfoPageArgs.fromBundle(getArguments()).getCollectionName();
@@ -134,11 +137,20 @@ public class InfoPage extends Fragment {
         ArrayList<Integer> results = new ArrayList<>();
 
         fStore = FirebaseFirestore.getInstance();
+
+        DocumentReference documentReference =     fStore.collection("info_about_test").document(collectionName);
+        documentReference.addSnapshotListener(getActivity(), new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                about.setText(value.getString("aboutText").replaceAll("\\n", "\n"));
+            }
+        });
         CollectionReference collectionReference = fStore.collection(collectionName);
         collectionReference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()){
+
                     List<DocumentSnapshot> documentSnapshotList= task.getResult().getDocuments();
                   //  System.out.println("snap__+ :"+documentSnapshotList);
                     for (DocumentSnapshot ds:documentSnapshotList){
@@ -210,6 +222,8 @@ public class InfoPage extends Fragment {
 //                    plot.getGraph().refreshLayout();
 //                    plot.getLayoutManager().refreshLayout();
                     plot.redraw();
+                    progressBar.setVisibility(View.GONE);
+                    plot.setVisibility(View.VISIBLE);
                 }
 
             }

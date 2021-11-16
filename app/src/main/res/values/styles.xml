@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+        <style name="Divider">
+                <item name="android:layout_width">1dip</item>
+                <item name="android:layout_height">match_parent</item>
+                <item name="android:background">@color/deep_water</item>
+        </style>
+
+        <style name="Divider_invisible">
+                <item name="android:layout_width">1dip</item>
+                <item name="android:layout_height">match_parent</item>
+        </style>
     <style name="myStyle">
 <!--        <item name="domainLineColor">@color/ap_white</item>-->
 <!--        <item name="rangeLineColor">@color/ap_white</item>-->
@@ -8,7 +18,7 @@
         <item name="borderColor">@color/ap_transparent</item>
 
         <item name="android:padding">0dp</item>
-        <item name="android:layout_margin">0dp</item>
+        <item name="android:layout_margin">30dp</item>
         <item name="domainLineExtension">0dp</item>
         <item name="rangeLineExtension">0dp</item>
 <!--        <item name="lineLabels">none</item>-->

@@ -12,12 +12,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.humanbenchmark.service.ServiceMainPage;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -76,10 +89,11 @@ public class MainProfilePage extends Fragment {
     FirebaseFirestore firebaseFirestore;
     FirebaseAuth firebaseAuth;
     String userId;
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        TextView textView = view.findViewById(R.id.textView5);
+        TextView textView = view.findViewById(R.id.userName);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
         userId = firebaseAuth.getCurrentUser().getUid();
@@ -92,18 +106,164 @@ public class MainProfilePage extends Fragment {
             }
         });
 
+        ServiceMainPage serviceMainPage = new ServiceMainPage();
 
-
-
-
-        view.findViewById(R.id.buttonLogOut).setOnClickListener(new View.OnClickListener() {
+        CollectionReference collectionReference = firebaseFirestore.collection("visualMemory_results");
+        collectionReference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                NavHostFragment.findNavController(MainProfilePage.this)
-                        .navigate(R.id.action_mainProfilePage_to_loginForm);
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()){
+                    ArrayList<Integer> resultsUser = new ArrayList<>();
+                    ArrayList<Integer> resultsAll = new ArrayList<>();
+
+                    List<DocumentSnapshot> documentSnapshotList= task.getResult().getDocuments();
+                    //  System.out.println("snap__+ :"+documentSnapshotList);
+                    for (DocumentSnapshot ds:documentSnapshotList){
+                        resultsAll.add( ds.getLong("result").intValue());
+                        if (ds.getString("userID").equals(userId))
+                            resultsUser.add(ds.getLong("result").intValue());
+
+                    }
+                   TextView textViewAv =  view.findViewById(R.id.textView_22r4);
+                    float avarage = serviceMainPage.getAvarage(resultsUser);
+                    System.out.println("AVERAGE!!!!!!!!!!!!! "+avarage);
+                    textViewAv.setText(df.format(avarage));
+                    Collections.sort(resultsAll);
+                     textViewAv =  view.findViewById(R.id.textView_23r4);
+                    textViewAv.setText(new String(df.format(serviceMainPage.getPercentile(resultsAll,avarage))+" %"));
             }
-        });
+        }});
+        collectionReference = firebaseFirestore.collection("aimTrainer_results");
+        collectionReference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()){
+                    ArrayList<Integer> resultsUser = new ArrayList<>();
+                    ArrayList<Integer> resultsAll = new ArrayList<>();
+
+                    List<DocumentSnapshot> documentSnapshotList= task.getResult().getDocuments();
+                    //  System.out.println("snap__+ :"+documentSnapshotList);
+                    for (DocumentSnapshot ds:documentSnapshotList){
+                        resultsAll.add( ds.getLong("result").intValue());
+                        if (ds.getString("userID").equals(userId))
+                            resultsUser.add(ds.getLong("result").intValue());
+
+                    }
+                    TextView textViewAv =  view.findViewById(R.id.textView_22r5);
+                    float avarage = serviceMainPage.getAvarage(resultsUser);
+                    textViewAv.setText(df.format(avarage));
+                    Collections.sort(resultsAll);
+                    textViewAv =  view.findViewById(R.id.textView_23r5);
+                    textViewAv.setText(new String(df.format(serviceMainPage.getPercentile(resultsAll,avarage))+" %"));
+                }
+            }});
+        collectionReference = firebaseFirestore.collection("sequenceMemory_results");
+        collectionReference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()){
+                    ArrayList<Integer> resultsUser = new ArrayList<>();
+                    ArrayList<Integer> resultsAll = new ArrayList<>();
+                    List<DocumentSnapshot> documentSnapshotList= task.getResult().getDocuments();
+                    //  System.out.println("snap__+ :"+documentSnapshotList);
+                    for (DocumentSnapshot ds:documentSnapshotList){
+                        resultsAll.add( ds.getLong("result").intValue());
+                        if (ds.getString("userID").equals(userId))
+                            resultsUser.add(ds.getLong("result").intValue());
+
+                    }
+                    TextView textViewAv =  view.findViewById(R.id.textView_22r6);
+                    float avarage = serviceMainPage.getAvarage(resultsUser);
+                    textViewAv.setText(df.format(avarage));
+                    Collections.sort(resultsAll);
+                    textViewAv =  view.findViewById(R.id.textView_23r6);
+                    textViewAv.setText(new String(df.format(serviceMainPage.getPercentile(resultsAll,avarage))+" %"));
+                }
+            }});
+        collectionReference = firebaseFirestore.collection("chimpTest_results");
+        collectionReference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()){
+                    ArrayList<Integer> resultsUser = new ArrayList<>();
+                    ArrayList<Integer> resultsAll = new ArrayList<>();
+                    List<DocumentSnapshot> documentSnapshotList= task.getResult().getDocuments();
+                    //  System.out.println("snap__+ :"+documentSnapshotList);
+                    for (DocumentSnapshot ds:documentSnapshotList){
+                        resultsAll.add( ds.getLong("result").intValue());
+                        if (ds.getString("userID").equals(userId))
+                            resultsUser.add(ds.getLong("result").intValue());
+
+                    }
+                    TextView textViewAv =  view.findViewById(R.id.textView_22r7);
+                    float avarage = serviceMainPage.getAvarage(resultsUser);
+                    textViewAv.setText(df.format(avarage));
+                    Collections.sort(resultsAll);
+                    textViewAv =  view.findViewById(R.id.textView_23r7);
+                    textViewAv.setText(new String(df.format(serviceMainPage.getPercentile(resultsAll,avarage))+" %"));
+                }
+            }});
+        collectionReference = firebaseFirestore.collection("numberMemory_results");
+        collectionReference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()){
+                    ArrayList<Integer> resultsUser = new ArrayList<>();
+                    ArrayList<Integer> resultsAll = new ArrayList<>();
+                    List<DocumentSnapshot> documentSnapshotList= task.getResult().getDocuments();
+                    //  System.out.println("snap__+ :"+documentSnapshotList);
+                    for (DocumentSnapshot ds:documentSnapshotList){
+                        resultsAll.add( ds.getLong("result").intValue());
+                        if (ds.getString("userID").equals(userId))
+                            resultsUser.add(ds.getLong("result").intValue());
+
+                    }
+                    TextView textViewAv =  view.findViewById(R.id.textView_22r);
+                    float avarage = serviceMainPage.getAvarage(resultsUser);
+                    textViewAv.setText(df.format(avarage));
+                    Collections.sort(resultsAll);
+                    textViewAv =  view.findViewById(R.id.textView_23r);
+                    textViewAv.setText(new String(df.format(serviceMainPage.getPercentile(resultsAll,avarage))+" %"));
+                }
+            }});
+        collectionReference = firebaseFirestore.collection("reactionTime_results");
+        collectionReference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()){
+                    ArrayList<Integer> resultsUser = new ArrayList<>();
+                    ArrayList<Integer> resultsAll = new ArrayList<>();
+                    List<DocumentSnapshot> documentSnapshotList= task.getResult().getDocuments();
+                    //  System.out.println("snap__+ :"+documentSnapshotList);
+                    for (DocumentSnapshot ds:documentSnapshotList){
+                        resultsAll.add( ds.getLong("result").intValue());
+                        if (ds.getString("userID").equals(userId))
+                            resultsUser.add(ds.getLong("result").intValue());
+
+                    }
+                    TextView textViewAv =  view.findViewById(R.id.textView_22r3);
+                    float avarage = serviceMainPage.getAvarage(resultsUser);
+                    textViewAv.setText(df.format(avarage));
+                    Collections.sort(resultsAll);
+                    textViewAv =  view.findViewById(R.id.textView_23r3);
+                    textViewAv.setText(new String(df.format(serviceMainPage.getPercentile(resultsAll,avarage))+" %"));
+                }
+            }});
+
+
+//
+//
+//
+//
+//
+//        view.findViewById(R.id.buttonLogOut).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FirebaseAuth.getInstance().signOut();
+//                NavHostFragment.findNavController(MainProfilePage.this)
+//                        .navigate(R.id.action_mainProfilePage_to_loginForm);
+//            }
+//        });
 
     }
 }

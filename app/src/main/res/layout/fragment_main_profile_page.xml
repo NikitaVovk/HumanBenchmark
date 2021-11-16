@@ -4,33 +4,480 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context=".MainProfilePage">
 
-    <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/buttonLogOut"
+        <TextView
+            android:id="@+id/userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="UserName"
+            android:textAlignment="center"
+            android:textColor="@color/see_breath"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/userNameTag" />
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
-            android:text="LogOut"
+            android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+            <TableLayout
+                android:id="@+id/table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:stretchColumns="*">
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/deep_water">
+
+                    <TextView
+                        android:id="@+id/textView_11r"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:text="Test"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent">
+
+                        <View style="@style/Divider" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView_12r"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:text="Score"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent">
+
+                        <View style="@style/Divider" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView_13r"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:text="Percentile"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/wave">
+
+                    <TextView
+                        android:id="@+id/textView_21r4"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:text="Visual Memory"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent">
+
+                        <View style="@style/Divider" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView_22r4"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent">
+
+                        <View style="@style/Divider" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView_23r4"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/ocean">
+
+                    <TextView
+                        android:id="@+id/textView_21r5"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:text="Aim Trainer"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent">
+
+                        <View style="@style/Divider" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView_22r5"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent">
+
+                        <View style="@style/Divider" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView_23r5"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/wave">
+
+                    <TextView
+                        android:id="@+id/textView_21r6"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:text="Sequence Memory"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent">
+
+                        <View style="@style/Divider" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView_22r6"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent">
+
+                        <View style="@style/Divider" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView_23r6"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/ocean">
+
+                    <TextView
+                        android:id="@+id/textView_21r7"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:text="Chimp Test"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent">
+
+                        <View style="@style/Divider" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView_22r7"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent">
+
+                        <View style="@style/Divider" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView_23r7"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/wave">
+
+                    <TextView
+                        android:id="@+id/textView_21r"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:text="Number Memory"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent">
+
+                        <View style="@style/Divider" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView_22r"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent">
+
+                        <View style="@style/Divider" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView_23r"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/ocean">
+
+                    <TextView
+                        android:id="@+id/textView_21r3"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:text="Reaction Time"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent">
+
+                        <View style="@style/Divider" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView_22r3"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent">
+
+                        <View style="@style/Divider" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView_23r3"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+                </TableRow>
+
+            </TableLayout>
+        </ScrollView>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/pngwing_com__5___1_"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/userNameTag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="76dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.549"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonLogOut" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="UserName"
+            android:textAlignment="center"
+            android:textColor="@color/see_breath"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <Button
+            android:id="@+id/logOut"
+            android:layout_width="91dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="16dp"
+            android:text="LogOut"
+            android:textSize="12sp"
+            app:backgroundTint="@color/wave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

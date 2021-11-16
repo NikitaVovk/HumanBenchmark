@@ -69,10 +69,12 @@ public class NumberMemoryStart extends Fragment {
     }
 
     public ImageView infoView;
+    ImageView ico;
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //textView = view.findViewById(R.id.textView5);
         infoView =  view.findViewById(R.id.infoNumber);
+        ico=  view.findViewById(R.id.ico_nums);
         buttonStart =  view.findViewById(R.id.startNumberMemory);
 //        int reachedLvl = SequenceMemoryStartArgs.fromBundle(getArguments()).getReachedLvl();
 //        if (reachedLvl!=-1){
