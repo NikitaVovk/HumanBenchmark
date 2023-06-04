@@ -117,8 +117,8 @@ public class AimTrainer extends Fragment {
         heightLayout=  getViewMeasure(view,true);
         widthLayout = getViewMeasure(view,false);
         serviceAimTrainer = new ServiceAimTrainer(this);
-        System.out.println("ONheight+++++++++++++++" + getViewMeasure(view,true));
-        System.out.println("ONwidth+++++++++++++++" + getViewMeasure(view,false));
+        //System.out.println("ONheight+++++++++++++++" + getViewMeasure(view,true));
+        //System.out.println("ONwidth+++++++++++++++" + getViewMeasure(view,false));
 
         //serviceRTT = new ServiceReactionTimeTest(this);
         addListeners();
@@ -200,12 +200,13 @@ public class AimTrainer extends Fragment {
             //    params.setMargins(0, 1247, 0, 0);
 
 
-                if (serviceAimTrainer.state==29){
+                if (serviceAimTrainer.getStateService()==29){
                     params.setMargins(0, 12, 0, 60);
                     textViewInfo.setVisibility(View.VISIBLE);
                     infoView.setVisibility(View.VISIBLE);
                     saveResult.setVisibility(View.VISIBLE);
                     result = serviceAimTrainer.allTime/30;
+                    textViewRemaining.setText(serviceAimTrainer.getWynik());
                     serviceAimTrainer = new ServiceAimTrainer(AimTrainer.this);
 
                 }

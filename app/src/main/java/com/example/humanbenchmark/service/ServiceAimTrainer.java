@@ -11,9 +11,18 @@ public class ServiceAimTrainer  extends Thread {
     public int state = -1;
     ArrayList<Long> arrayListOfTimes;
     AimTrainer handler;
+    String wynik;
    public long allTime;
 
-   public boolean isServed;
+    public String getWynik() {
+        return wynik;
+    }
+
+    public void setWynik(String wynik) {
+        this.wynik = wynik;
+    }
+
+    public boolean isServed;
 
     public ServiceAimTrainer(   AimTrainer handler) {
         this.state = -1;
@@ -21,6 +30,7 @@ public class ServiceAimTrainer  extends Thread {
         allTime= 0 ;
         this.handler = handler;
         this.isServed = false;
+        this.wynik = "";
 
     }
 
@@ -37,6 +47,7 @@ public class ServiceAimTrainer  extends Thread {
        // ArrayList <Long> lista = new ArrayList<>();
         int licznik =0;
         while(state<29) {
+            //System.out.println("STATE : "+ state);
             licznik++;
                 state++;
 
@@ -55,12 +66,15 @@ public class ServiceAimTrainer  extends Thread {
 
             testResult = System.currentTimeMillis() - testResult;
             allTime+=testResult;
+            System.out.println("WYNIIIIIK!!!!: " + allTime);
             //lista.add(testResult);
         }
        // System.out.println("KONIEEEC+ "+lista+"\n"+lista.size());
         isServed= true;
-        String wynik = "Avarage time per target: "+ (allTime/30)+"ms";
-        handler.textViewRemaining.setText(wynik);
+         wynik = "Avarage time per target: "+ (allTime/30)+"ms";
+        System.out.println("WYNIIIIIK!!!!: " + wynik);
+//        handler.textViewRemaining.setText(wynik);
+        //wynik wyswietlic w aimtrainer w button gdzie if(==29)!!!
 
 
     }
