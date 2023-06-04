@@ -3,7 +3,6 @@
 
 ![2023-06-04-23-06-55](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/1da9dcae-0710-469c-8bed-84f7a0348fd7)
 ![2023-06-04-23-07-12](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/bd2cd061-8abf-4a34-8896-6564847b3c9b)
-![2023-06-04-23-07-22](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/871b2b8e-d92d-438a-ae1f-028f191d7633)
 ![2023-06-04-23-07-22](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/9301a1d8-e473-4f17-ba9b-ce87ffb5b619)
 ![2023-06-04-23-07-48](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/62aa9fd5-e4bf-4f29-8b66-4ff05da0ca63)
 ![2023-06-04-23-08-02](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/e2df0148-9e95-47d9-a4c5-12500e3981a0)
