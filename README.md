@@ -1,11 +1,6 @@
 # HumanBenchmark
 ![2023-06-04-23-06-20](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/7dbc4c2a-b32d-461e-bb68-c96bc213c6aa)
-<details>
-  <summary>The title of the image group</summary><details>
-  <img src="image-url" name="image-name">
-  <img src="image-url" name="image-name">
-  <img src="image-url" name="image-name">
-</details>
+
 ![2023-06-04-23-06-55](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/1da9dcae-0710-469c-8bed-84f7a0348fd7)
 ![2023-06-04-23-07-12](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/bd2cd061-8abf-4a34-8896-6564847b3c9b)
 ![2023-06-04-23-07-22](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/9301a1d8-e473-4f17-ba9b-ce87ffb5b619)
@@ -21,3 +16,9 @@
 
 
 
+<details>
+  <summary>The title of the image group</summary><details>
+  <img src="image-url" name="image-name">
+  <img src="image-url" name="image-name">
+  <img src="image-url" name="image-name">
+</details>
