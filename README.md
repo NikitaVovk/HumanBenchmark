@@ -14,6 +14,10 @@
 ![2023-06-04-23-11-04](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/2643b378-dd45-41eb-8eeb-fe918a817bed)
 ![2023-06-04-23-11-19](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/ca4d7282-07e4-4c16-a2f8-f0f4681d969b)
 
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![image](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/e1e6b824-ada5-4adf-b36a-91b0c6017a16)
+  | ![image](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/31ea0e89-5aab-40ca-8e31-f1c8a2ed2e56)
 
 
 <details>
