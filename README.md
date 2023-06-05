@@ -10,7 +10,7 @@
 <br/>
 <p float="left">
   <img src="gifs/reaction.gif" width="170" />
-  <img src="presentation/reac.png"  width="751"/>
+  <img src="presentation/reac.png"  width="600"/>
   </p>
 </details>
 
