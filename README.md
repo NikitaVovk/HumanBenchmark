@@ -19,7 +19,7 @@
 </p>
 
 <details>
-  <summary>The title of the image group</summary><details>
+
   <img src="gifs/aim.gif" width="250" />
-  ![2023-06-04-23-06-55](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/1da9dcae-0710-469c-8bed-84f7a0348fd7)
+  <img src="presentation/aim.png" />
 </details>
