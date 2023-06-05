@@ -19,8 +19,8 @@
 <summary>AIM Trainer</summary>
 <br/>
 <p float="left">
-  <img src="gifs/aim.gif" width="202" />
-  <img src="presentation/aim.png"  width="751"/>
+  <img src="gifs/aim.gif" width="175" />
+  <img src="presentation/aim.png"  width="647"/>
   </p>
 </details>
 
@@ -29,8 +29,8 @@
 <summary>Number Memory</summary>
 <br/>
 <p float="left">
-  <img src="gifs/number.gif" width="202" />
-  <img src="presentation/num.png"  width="751"/>
+  <img src="gifs/number.gif" width="175" />
+  <img src="presentation/num.png"  width="647"/>
   </p>
 </details>
 
@@ -39,8 +39,8 @@
 <summary>Sequence memory</summary>
 <br/>
 <p float="left">
-  <img src="gifs/sequence.gif" width="202" />
-  <img src="presentation/seq.png"  width="751"/>
+  <img src="gifs/sequence.gif" width="175" />
+  <img src="presentation/seq.png"  width="647"/>
   </p>
 </details>
 
@@ -49,8 +49,8 @@
 <summary>Chimp Test</summary>
 <br/>
 <p float="left">
-  <img src="gifs/chimp.gif" width="202" />
-  <img src="presentation/chimp.png"  width="751"/>
+  <img src="gifs/chimp.gif" width="175" />
+  <img src="presentation/chimp.png"  width="647"/>
   </p>
 </details>
 
@@ -59,8 +59,8 @@
 <summary>Visual Memory</summary>
 <br/>
 <p float="left">
-  <img src="gifs/visual.gif" width="202" />
-  <img src="presentation/vis.png"  width="751"/>
+  <img src="gifs/visual.gif" width="175" />
+  <img src="presentation/vis.png"  width="647"/>
   </p>
 </details>
 
