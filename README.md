@@ -40,9 +40,7 @@
 
 <details name = "SEQ TEST">
   
-<summary>Sequence memory
-  <img src="app/src/main/res/drawable/reactiontime1.png"  />
-  </summary>
+<summary>Sequence memory</summary>
 <br/>
 <p float="left">
   <img src="gifs/sequence.gif" width="175" />
