@@ -8,8 +8,9 @@
 <img src="presentation/nav.png"  />
 
 <br/>
-<h1>Select the test to see the preview:</h1>
-<details name = "REAC TEST">
+<h1>Tests Preview:</h1>
+
+<details open>
 <summary size = "55">Reaction Time</summary>
 <br/>
 <p float="left">
@@ -18,7 +19,7 @@
   </p>
 </details>
 
-<details name = "AIM TEST">
+<details open>
   
 <summary>AIM Trainer</summary>
 <br/>
@@ -28,7 +29,7 @@
   </p>
 </details>
 
-<details name = "NUM TEST">
+<details open>
   
 <summary>Number Memory</summary>
 <br/>
@@ -38,7 +39,7 @@
   </p>
 </details>
 
-<details name = "SEQ TEST">
+<details open>
   
 <summary>Sequence memory</summary>
 <br/>
@@ -58,7 +59,7 @@
   </p>
 </details>
 
-<details name = "VIS TEST">
+<details open>
   
 <summary>Visual Memory</summary>
 <br/>
