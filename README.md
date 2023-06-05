@@ -9,8 +9,8 @@
 <summary>Reaction Time</summary>
 <br/>
 <p float="left">
-  <img src="gifs/reaction.gif" width="170" />
-  <img src="presentation/reac.png"  width="600"/>
+  <img src="gifs/reaction.gif" width="175" />
+  <img src="presentation/reac.png"  width="645"/>
   </p>
 </details>
 
