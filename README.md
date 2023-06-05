@@ -23,7 +23,7 @@
 <summary>AIM TEST</summary>
 <br/>
 <p float="left">
-  <img src="gifs/aim.gif" width="202" />
+  <img src="gifs/reaction.gif" width="202" />
   <img src="presentation/aim.png"  width="751"/>
   </p>
 </details>
