@@ -63,7 +63,7 @@
 <br/>
 <p float="left">
   <img src="gifs/visual.gif" width="175" />
-  <img src="presentation/vis.png"  width="647"/>
+  <img src="presentation/visual.png"  width="647"/>
   </p>
 </details>
 
