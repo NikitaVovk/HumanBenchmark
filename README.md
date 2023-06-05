@@ -7,7 +7,7 @@
 <br/>
 <h1>Select the test to see the preview:</h1>
 <details name = "REAC TEST">
-<summary>Reaction Time</summary>
+<summary size = "55">Reaction Time</summary>
 <br/>
 <p float="left">
   <img src="gifs/reaction.gif" width="175" />
@@ -64,6 +64,8 @@
   <img src="presentation/vis.png"  width="647"/>
   </p>
 </details>
+
+<br/>
 
 
 ![2023-06-04-23-11-19](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/ca4d7282-07e4-4c16-a2f8-f0f4681d969b)
