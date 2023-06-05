@@ -66,8 +66,5 @@
 
 ![2023-06-04-23-11-19](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/ca4d7282-07e4-4c16-a2f8-f0f4681d969b)
 
- summary{
-      font-size: 65px;
-  }
 
 
