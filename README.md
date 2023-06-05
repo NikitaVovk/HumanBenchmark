@@ -14,12 +14,13 @@
 ![2023-06-04-23-11-04](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/2643b378-dd45-41eb-8eeb-fe918a817bed)
 ![2023-06-04-23-11-19](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/ca4d7282-07e4-4c16-a2f8-f0f4681d969b)
 
-<p float="center">
+<p float="left">
   <img src="gifs/aim.gif" width="250" />
 </p>
 
 <details>
-
-  <img src="gifs/aim.gif" width="250" />
-  <img src="presentation/aim.png" />
+<p float="left">
+  <img src="gifs/aim.gif" width="100" />
+  <img src="presentation/aim.png"  width="250"/>
+  </p>
 </details>
