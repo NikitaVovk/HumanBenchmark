@@ -14,14 +14,12 @@
 ![2023-06-04-23-11-04](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/2643b378-dd45-41eb-8eeb-fe918a817bed)
 ![2023-06-04-23-11-19](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/ca4d7282-07e4-4c16-a2f8-f0f4681d969b)
 
-<p float="left">
+<p float="center">
   <img src="gifs/aim.gif" width="250" />
-  <img src="![image](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/829b7a96-3d7d-4b03-bfc3-f6eef281e59f)" width="100" /> 
 </p>
 
 <details>
   <summary>The title of the image group</summary><details>
-  <img src="image-url" name="image-name">
-  <img src="image-url" name="image-name">
-  <img src="image-url" name="image-name">
+  <img src="gifs/aim.gif" width="250" />
+  ![2023-06-04-23-06-55](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/1da9dcae-0710-469c-8bed-84f7a0348fd7)
 </details>
