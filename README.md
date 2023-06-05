@@ -18,7 +18,7 @@
   <img src="gifs/aim.gif" width="250" />
 </p>
 
-<details>
+<details name = "AIM TEST">
 <p float="left">
   <img src="gifs/aim.gif" width="202" />
   <img src="presentation/aim.png"  width="751"/>
