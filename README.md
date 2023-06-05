@@ -15,7 +15,7 @@
 ![2023-06-04-23-11-19](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/ca4d7282-07e4-4c16-a2f8-f0f4681d969b)
 
 <p float="left">
-  <img src="gifs/aim.gif" width="100" />
+  <img src="gifs/aim.gif" width="250" />
   <img src="![image](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/829b7a96-3d7d-4b03-bfc3-f6eef281e59f)" width="100" /> 
 </p>
 
