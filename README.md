@@ -4,6 +4,8 @@
 <img src="presentation/impl.png"  />
 
 ![2023-06-04-23-07-48](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/62aa9fd5-e4bf-4f29-8b66-4ff05da0ca63)
+<img src="presentation/nav.png"  />
+
 <br/>
 <h1>Select the test to see the preview:</h1>
 <details name = "REAC TEST">
