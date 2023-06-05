@@ -48,7 +48,7 @@
   </p>
 </details>
 
-<details name = "Chimp TEST">
+<details open>
   
 <summary>Chimp Test</summary>
 <br/>
