@@ -19,6 +19,9 @@
 </p>
 
 <details name = "AIM TEST">
+  
+<summary>AIM TEST</summary>
+<br/>
 <p float="left">
   <img src="gifs/aim.gif" width="202" />
   <img src="presentation/aim.png"  width="751"/>
