@@ -1,4 +1,5 @@
-# HumanBenchmark
+# HumanBenchmark ![image](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/47d08f97-8f4f-471a-bae1-3f4f97352972)
+
 ![2023-06-04-23-06-20](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/7dbc4c2a-b32d-461e-bb68-c96bc213c6aa)
 ![2023-06-04-23-07-12](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/bd2cd061-8abf-4a34-8896-6564847b3c9b)
 <img src="presentation/impl.png"  />
