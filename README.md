@@ -20,7 +20,7 @@
 
 <details>
 <p float="left">
-  <img src="gifs/aim.gif" width="200" />
+  <img src="gifs/aim.gif" width="202" />
   <img src="presentation/aim.png"  width="750"/>
   </p>
 </details>
