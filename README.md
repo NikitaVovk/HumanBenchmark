@@ -1,4 +1,4 @@
-# HumanBenchmark <img src="app/src/main/res/drawable/imgonline_com_ua_resize_r39p1w1jww2mhunf.png" width = "25" />
+# HumanBenchmark <img src="app/src/main/res/drawable/imgonline_com_ua_resize_r39p1w1jww2mhunf.png" width = "45" />
 
 ![2023-06-04-23-06-20](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/7dbc4c2a-b32d-461e-bb68-c96bc213c6aa)
 ![2023-06-04-23-07-12](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/bd2cd061-8abf-4a34-8896-6564847b3c9b)
