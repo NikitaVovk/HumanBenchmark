@@ -21,6 +21,6 @@
 <details>
 <p float="left">
   <img src="gifs/aim.gif" width="202" />
-  <img src="presentation/aim.png"  width="750"/>
+  <img src="presentation/aim.png"  width="751"/>
   </p>
 </details>
