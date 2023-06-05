@@ -5,9 +5,6 @@
 
 ![2023-06-04-23-07-48](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/62aa9fd5-e4bf-4f29-8b66-4ff05da0ca63)
 <details name = "REAC TEST">
- summary{
-      font-size: 65px;
-  }
 <summary>Reaction Time</summary>
 <br/>
 <p float="left">
@@ -69,5 +66,8 @@
 
 ![2023-06-04-23-11-19](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/ca4d7282-07e4-4c16-a2f8-f0f4681d969b)
 
+ summary{
+      font-size: 65px;
+  }
 
 
