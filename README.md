@@ -4,14 +4,6 @@
 <img src="presentation/impl.png"  />
 
 ![2023-06-04-23-07-48](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/62aa9fd5-e4bf-4f29-8b66-4ff05da0ca63)
-![2023-06-04-23-08-02](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/e2df0148-9e95-47d9-a4c5-12500e3981a0)
-
-![2023-06-04-23-11-19](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/ca4d7282-07e4-4c16-a2f8-f0f4681d969b)
-
-<p float="left">
-  <img src="gifs/aim.gif" width="250" />
-</p>
-
 <details name = "REAC TEST">
   
 <summary>Reaction Time</summary>
@@ -71,3 +63,9 @@
   <img src="presentation/vis.png"  width="751"/>
   </p>
 </details>
+
+
+![2023-06-04-23-11-19](https://github.com/NikitaVovk/HumanBenchmark/assets/37519206/ca4d7282-07e4-4c16-a2f8-f0f4681d969b)
+
+
+
