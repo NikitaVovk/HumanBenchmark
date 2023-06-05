@@ -18,12 +18,62 @@
   <img src="gifs/aim.gif" width="250" />
 </p>
 
-<details name = "AIM TEST">
+<details name = "REAC TEST">
   
-<summary>AIM TEST</summary>
+<summary>Reaction Time</summary>
 <br/>
 <p float="left">
   <img src="gifs/reaction.gif" width="202" />
+  <img src="presentation/reac.png"  width="751"/>
+  </p>
+</details>
+
+<details name = "AIM TEST">
+  
+<summary>AIM Trainer</summary>
+<br/>
+<p float="left">
+  <img src="gifs/aim.gif" width="202" />
   <img src="presentation/aim.png"  width="751"/>
+  </p>
+</details>
+
+<details name = "NUM TEST">
+  
+<summary>Number Memory</summary>
+<br/>
+<p float="left">
+  <img src="gifs/number.gif" width="202" />
+  <img src="presentation/num.png"  width="751"/>
+  </p>
+</details>
+
+<details name = "SEQ TEST">
+  
+<summary>Sequence memory</summary>
+<br/>
+<p float="left">
+  <img src="gifs/sequence.gif" width="202" />
+  <img src="presentation/seq.png"  width="751"/>
+  </p>
+</details>
+
+<details name = "Chimp TEST">
+  
+<summary>Chimp Test</summary>
+<br/>
+<p float="left">
+  <img src="gifs/chimp.gif" width="202" />
+  <img src="presentation/chimp.png"  width="751"/>
+  </p>
+</details>
+
+<details name = "VIS TEST">
+  
+<summary>Visual Memory</summary>
+<br/>
+<p float="left">
+  <img src="gifs/visual.gif" width="202" />
+  <img src="presentation/vis.png"  width="751"/>
   </p>
 </details>
